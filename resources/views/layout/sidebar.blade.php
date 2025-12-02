@@ -22,7 +22,7 @@
                 <!-- Dashboard -->
                 <!-- ---------------------------------- -->
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="index.html" id="get-url">
+                    <a class="sidebar-link" href="{{ url('/') }}" id="get-url">
                         <iconify-icon
                             icon="solar:screencast-2-linear"
                             class="aside-icon"
@@ -47,10 +47,10 @@
                         <span class="hide-menu">Master Data</span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
-                        <li class="sidebar-item selected">
+                        <li class="sidebar-item selected-ex">
                             <a
-                                href="data-table.html"
-                                class="sidebar-link sublink active"
+                                href=""
+                                class="sidebar-link sublink active-ex"
                             >
                                 <div
                                     class="round-16 d-flex align-items-center justify-content-center"

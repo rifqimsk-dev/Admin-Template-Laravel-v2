@@ -10,16 +10,16 @@
                     class="brand-logo d-flex align-items-center justify-content-between"
                 >
                     <a
-                        href="../main/index.html"
+                        href="{{ url('/') }}"
                         class="text-nowrap logo-img d-flex align-items-center gap-2"
                     >
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Light Logo icon -->
                             <img
-                                src="{{ asset('assets/images/logos/logo-light-icon.svg') }}"
+                                src="{{ asset('assets/images/logos/kemakmuran.webp') }}"
                                 alt="homepage"
-                                class=""
+                                style="height: 40px"
                             />
                         </b>
                         <!--End Logo icon -->
@@ -44,18 +44,14 @@
                     class="brand-logo d-flex align-items-center justify-content-between"
                 >
                     <a
-                        href="../main/index.html"
+                        href="{{ url('/') }}"
                         class="text-nowrap logo-img d-flex align-items-center gap-2"
                     >
-                        <b class="logo-icon">
+                        <span class="text-white">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Light Logo icon -->
-                            <img
-                                src="{{ asset('assets/images/logos/logo-light-icon.svg') }}"
-                                alt="homepage"
-                                class=""
-                            />
-                        </b>
+                            Project Title
+                        </span>
                         <!--End Logo icon -->
                     </a>
                 </div>
@@ -124,12 +120,12 @@
                                             />
                                             <div class="ms-3">
                                                 <h5 class="mb-1 fs-4">
-                                                    Rifqi Rifaldi
+                                                    {{ Auth::user()->name; }}
                                                 </h5>
                                                 <p
                                                     class="mb-0 fs-2 d-flex align-items-center text-muted"
                                                 >
-                                                    surisalbi303@gmail.com
+                                                    {{ Auth::user()->email; }}
                                                 </p>
                                             </div>
                                         </div>
@@ -140,7 +136,7 @@
                                                 class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link"
                                             >
                                                 <a
-                                                    href="../main/page-account-settings.html"
+                                                    href=""
                                                     class="d-flex align-items-center"
                                                 >
                                                     <i
@@ -153,7 +149,7 @@
                                                 class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link"
                                             >
                                                 <a
-                                                    href="../main/page-account-settings.html"
+                                                    href=""
                                                     class="d-flex align-items-center"
                                                 >
                                                     <i
@@ -165,15 +161,15 @@
                                             <div
                                                 class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link"
                                             >
-                                                <a
-                                                    href="../main/authentication-login.html"
-                                                    class="d-flex align-items-center text-danger"
-                                                >
-                                                    <i
-                                                        class="ti ti-power me-2 fs-7"
-                                                    ></i>
-                                                    Logout
-                                                </a>
+                                                @if(Auth::check())
+                                                    <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                                                        @csrf
+                                                        <button type="submit" class="border-0 bg-transparent p-0 d-flex align-items-center text-danger">
+                                                            <i class="ti ti-power me-2 fs-7"></i>
+                                                            Logout
+                                                        </button>
+                                                    </form>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>

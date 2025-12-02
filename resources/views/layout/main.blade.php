@@ -16,7 +16,7 @@
         <link
             rel="shortcut icon"
             type="image/png"
-            href="{{ asset('assets/images/logos/favicon.png') }}"
+            href="{{ asset('assets/images/logos/logo.png') }}"
         />
 
         <!-- Core Css -->
@@ -30,7 +30,7 @@
             href="{{ asset('assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}"
         />
 
-        <title>My Admin</title>
+        <title>{{ $title }}</title>
     </head>
 
     <body>
